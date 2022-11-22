@@ -26,8 +26,10 @@ jobs:
       - name: Configure git username
         run: sudo git config --global user.name "psyllost"
       
+      - name: Configure git email
+        run: sudo git config --global user.email "ioanna.psylla@gmail.com"
+        
       - name: Configure git pass
         run: sudo git config --global user.password "${{ secrets.PAT }}"
-      
       - name: Deploy to github page url
         run: ng deploy --base-href=https://psyllost.github.io/volume-converter/ --no-silent
