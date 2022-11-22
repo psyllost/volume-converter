@@ -1,0 +1,19 @@
+name: Deploy volume to github pages url
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+      
+      - name: Install deps
+        run: npm -i | ng add angular-cli-ghpages
+
+      - name: Deploy to github page url
+        run: ng deploy --base-href=https://psyllost.github.io/volume-converter/
