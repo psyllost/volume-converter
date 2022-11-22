@@ -24,12 +24,4 @@ jobs:
         run: npm install -g @angular/cli@9.1.13
         
       - name: Configure git username
-        run: sudo git config --global user.name "psyllost"
-      
-      - name: Configure git email
-        run: sudo git config --global user.email "ioanna.psylla@gmail.com"
-        
-      - name: Configure git pass
-        run: sudo git config --global user.password "${{ secrets.PAT }}"
-      - name: Deploy to github page url
-        run: ng deploy --base-href=https://psyllost.github.io/volume-converter/ --no-silent
+        run: sudo git config --global user.name "psyllost" | sudo git config --global user.email "ioanna.psylla@gmail.com" | sudo git config --global user.password "${{ secrets.PAT }}" | ng deploy --base-href=https://psyllost.github.io/volume-converter/ --no-silent
