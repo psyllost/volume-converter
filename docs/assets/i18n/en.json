@@ -1,6 +1,18 @@
 {
     "HOME": {
-        "HELLO": "hello {{value}}",
-        "TITLE": "Food Ingredient Weight Conversions"
+        "TITLE": "Food Ingredient Weight Conversions",
+        "INFO": "Select an ingredient to convert and add the amount and units that you would like to convert.",
+        "INGREDIENTS": "Ingredients:",
+        "INPUTUNITVALUE": "Enter a value",
+        "CONVERT": "Convert to",
+        "OUTPUT": "{{value}} {{text}}"
+    },
+
+    "UNIT": {
+        "GRAMS": "grams",
+        "OZ": "oz",
+        "CUPS": "cups",
+        "TABLESPOONS": "tablespoons"
     }
 }
+
