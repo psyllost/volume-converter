@@ -24,4 +24,4 @@ jobs:
         run: npm install -g @angular/cli@9.1.13
         
       - name: Deploy to github page url
-        run: ng deploy --base-href=https://psyllost.github.io/volume-converter/
+        run: ng deploy --base-href=https://psyllost.github.io/volume-converter/ --no-silent
