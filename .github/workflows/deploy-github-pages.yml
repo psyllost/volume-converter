@@ -24,7 +24,7 @@ jobs:
         run: npm install -g @angular/cli@9.1.13
         
       - name: Configure git
-        run: git config --global user.name "psyllost" | git config --global user.password "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"
+        run: git config --global user.name "psyllost" | git config --global user.password "${{ secrets.PAT }}"
         
       - name: Deploy to github page url
         run: ng deploy --base-href=https://psyllost.github.io/volume-converter/ --no-silent
