@@ -22,6 +22,6 @@ jobs:
         
       - name: Install angular cli
         run: npm install -g @angular/cli@9.1.13
-        
+        https://Username`**:**`Password`**@**`github.com/myRepoDir/myRepo.git`
       - name: Deploy to github page url
-        run: ng deploy --base-href=https://psyllost.github.io/volume-converter/ --no-silent
+        run: ng deploy --base-href=https://psyllost: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@github.io/volume-converter/ --no-silent
