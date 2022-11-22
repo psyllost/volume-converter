@@ -12,8 +12,16 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3.5.1
+        with:
+          node-version: 15.6.0
+      
       - name: Install deps
         run: npm install
-
+        
+      - name: Install angular cli
+        run: npm install -g @angular/cli@9.1.13
+        
       - name: Deploy to github page url
         run: ng deploy --base-href=https://psyllost.github.io/volume-converter/
