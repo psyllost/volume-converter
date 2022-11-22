@@ -16,4 +16,4 @@ jobs:
         run: npm install
 
       - name: Deploy to github page url
-        run: npm run deploy --base-href=https://psyllost.github.io/volume-converter/
+        run: ng deploy --base-href=https://psyllost.github.io/volume-converter/
