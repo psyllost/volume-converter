@@ -23,9 +23,8 @@ jobs:
       - name: Install angular cli
         run: npm install -g @angular/cli@9.1.13
         
-      - run: |
-         git config --global user.email "ioanna.psylla@gmail.com"
-         git config --global user.name "psyllost"
-         
-      - name: Start Angular app
-        run: ng deploy --base-href=https://psyllost.github.io/volume-converter/ --no-silent
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs
