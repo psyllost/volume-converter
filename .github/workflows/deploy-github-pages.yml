@@ -1,33 +1,20 @@
-name: Deploy volume to github pages url
-
+name: Build and Deploy
 on:
   push:
-    branches: [ "main" ]
-  workflow_dispatch:
-
+    branches:
+      - main
 jobs:
   build:
+
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
-      
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v3.5.1
-        with:
-          node-version: 15.6.0
-      
-      - name: Install deps
-        run: npm install
-        
-      - name: Install angular cli
-        run: npm install -g @angular/cli@9.1.13
-        
-      - run: ng build --prod
-        
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        if: ${{ github.ref == 'refs/heads/main' }}
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+    - uses: actions/checkout@v2
+    - name: All things angular
+      uses: AhsanAyaz/angular-deploy-gh-pages-actions@v1.3.2 ## replace by latest version without it you will see Expected format {org}/{repo}[/path]@ref. Actual 'AhsanAyaz/angular-deploy-gh-pages-actions',Input string was not in a correct format.
+      with:
+        github_access_token: ${{ secrets.ACCESS_TOKEN }} # see the Configuration section for how you can create secrets
+        build_configuration: production # The build environment for the app. please look configurations in your angular.json
+        base_href: https://psyllost.github.io/volume-converter/  # make sure this corresponds to https://<your_username>.github.io/<base_href>/
+        deploy_branch: gh-pages # The branch the action should deploy to.
+        angular_dist_build_folder: docs # The folder where your project is supposed to be after running ng build by the action.
