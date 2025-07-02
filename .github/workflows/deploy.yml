@@ -36,9 +36,10 @@ jobs:
       run: |
         # Build using the regular vite build from root
         npx vite build --base="/volume-converter/"
-        # The build output will be in dist/public, move it to dist for Pages
-        mv dist/public/* dist/ 2>/dev/null || true
-        rmdir dist/public 2>/dev/null || true
+        # The build output will be in dist/public, move contents to dist root
+        mv dist/public/* dist/
+        mv dist/public/.* dist/ 2>/dev/null || true
+        rmdir dist/public
       
     - name: Setup Pages
       uses: actions/configure-pages@v4
