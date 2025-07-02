@@ -8,7 +8,9 @@ import StaticHome from "@/pages/static-home";
 import NotFound from "@/pages/not-found";
 
 // Check if we're in static mode (GitHub Pages)
-const isStatic = import.meta.env.MODE === 'static' || window.location.hostname.includes('github.io');
+const isStatic = import.meta.env.MODE === 'static' || 
+                 window.location.hostname.includes('github.io') ||
+                 window.location.pathname.includes('/volume-converter/');
 
 function Router() {
   return (

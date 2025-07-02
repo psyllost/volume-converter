@@ -68,11 +68,11 @@ This project includes a GitHub Actions workflow that automatically deploys to Gi
 
 3. **Automatic Deployment**:
    - The workflow will automatically trigger on pushes to main
-   - Your app will be available at `https://yourusername.github.io/cooking-converter/`
+   - Your app will be available at `https://yourusername.github.io/volume-converter/`
 
 ### Repository Name
 
-If your repository name is different from "cooking-converter", update the `base` path in the Vite configuration or ensure your repository is named "cooking-converter" for the deployment to work correctly.
+This configuration is set up for a repository named "volume-converter". If your repository has a different name, update the `base` path in `vite.config.static.ts` to match your repository name.
 
 ## How It Works
 

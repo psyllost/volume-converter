@@ -34,9 +34,11 @@ jobs:
       
     - name: Build application for static deployment
       run: |
-        npm run build
-        # Copy the client build to root for GitHub Pages
-        cp -r dist/public/* dist/ || true
+        # Build using the regular vite build from root
+        npx vite build --base="/volume-converter/"
+        # The build output will be in dist/public, move it to dist for Pages
+        mv dist/public/* dist/ 2>/dev/null || true
+        rmdir dist/public 2>/dev/null || true
       
     - name: Setup Pages
       uses: actions/configure-pages@v4
