@@ -40,6 +40,13 @@ jobs:
         mv dist/public/* dist/
         mv dist/public/.* dist/ 2>/dev/null || true
         rmdir dist/public
+        # Copy .nojekyll file to dist
+        cp .nojekyll dist/
+        # Debug: show final structure
+        echo "Final deployment structure:"
+        ls -la dist/
+        echo "index.html preview:"
+        head -5 dist/index.html
       
     - name: Setup Pages
       uses: actions/configure-pages@v4
