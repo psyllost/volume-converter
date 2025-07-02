@@ -22,11 +22,12 @@ function Router() {
 }
 
 function App() {
+  // For static GitHub Pages, skip routing entirely and render StaticHome directly
   if (isStatic) {
     return (
       <TooltipProvider>
         <Toaster />
-        <Router />
+        <StaticHome />
       </TooltipProvider>
     );
   }
